@@ -43,23 +43,21 @@ public class Main {
         }
         while (num != countHeads);
     }
-    public static void clock(){
-          LocalDateTime now = LocalDateTime.now();
-        int hour;
-        int minute;
-        int second;
-      //  System.out.println(hour+":"+minute+":"+second);
-//        String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-//        System.out.println(time);
-        do {
-            hour = now.getHour();
-            minute = now.getMinute();
-            second = now.getSecond();
-            System.out.println(hour+":"+minute+":"+second);
-        }
-        while (now.getSecond() == second++);
 
-        }
+    public static void clock(){
+        Timer timer = new Timer();
+        timer.schedule( new TimerTask(){
+            public void run(){
+                LocalDateTime now = LocalDateTime.now();
+//
+                String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+                System.out.println(time);
+
+            }
+        },1000,1000);
+
+    }
+
 
 
     }
