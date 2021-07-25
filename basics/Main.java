@@ -1,3 +1,9 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class Main {
     public static void main (String[] args){
         System.out.println("Hello from lab01");
@@ -6,7 +12,9 @@ public class Main {
         pluralize("cat", 0);
         pluralize("bird", 5);
         flipNHeads(5);
+        clock();
     }
+
 
     public static void pluralize(String word , int num){
         if (num == 0 || num > 1){
@@ -34,9 +42,27 @@ public class Main {
             }
         }
         while (num != countHeads);
+    }
+    public static void clock(){
+          LocalDateTime now = LocalDateTime.now();
+        int hour;
+        int minute;
+        int second;
+      //  System.out.println(hour+":"+minute+":"+second);
+//        String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+//        System.out.println(time);
+        do {
+            hour = now.getHour();
+            minute = now.getMinute();
+            second = now.getSecond();
+            System.out.println(hour+":"+minute+":"+second);
+        }
+        while (now.getSecond() == second++);
+
+        }
 
 
     }
 
-}
+
 
