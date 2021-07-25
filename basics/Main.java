@@ -14,7 +14,7 @@ public class Main {
         flipNHeads(5);
         clock();
     }
-
+0
 
     public static void pluralize(String word , int num){
         if (num == 0 || num > 1){
