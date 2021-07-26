@@ -62,5 +62,4 @@ public class Main {
         double minimum= Collections.min(avgs);
         return minimum;
     }
-
 }
