@@ -11,10 +11,10 @@ public class Main {
         pluralize("dog", 1);
         pluralize("cat", 0);
         pluralize("bird", 5);
-        flipNHeads(5);
+        flipNHeads(3);
         clock();
     }
-0
+
 
     public static void pluralize(String word , int num){
         if (num == 0 || num > 1){
@@ -32,6 +32,7 @@ public class Main {
             double randomNum = Math.random();
             if (randomNum < 0.5){
                 System.out.println("tails");
+                countHeads=0;
             }
             else {
                 countHeads++;
