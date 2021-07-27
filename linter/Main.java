@@ -11,6 +11,13 @@ public class Main{
     public static void main(String[] args){
         System.out.println("Hello from lab03");
 
+        // lab03
+        javaScriptLinter();
+
+    }
+
+    public static void javaScriptLinter(){
+
 
         //lab03 part 2
         Path path = Paths.get("gates.js");
@@ -48,7 +55,6 @@ public class Main{
                                         if(!(line.contains("else"))){
                                             linesArr.add(line);
                                         }
-
                                     }
                                 }
                             }
@@ -59,11 +65,11 @@ public class Main{
         }catch (IOException e){
             e.printStackTrace();
         } //finally {
-            //reader.close();
+        //reader.close();
         //}
 
-       //System.out.println(linesArr);
-       // System.out.println(linesAll);
+        //System.out.println(linesArr);
+        // System.out.println(linesAll);
         HashSet<String> errorsArr = new HashSet<String>();
         for (String i : linesAll){
             int l = linesAll.indexOf(i)+1;
@@ -75,6 +81,5 @@ public class Main{
         }
         System.out.println(errorsArr);
     }
-
 
 }
