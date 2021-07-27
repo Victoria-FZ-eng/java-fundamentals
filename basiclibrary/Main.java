@@ -15,7 +15,23 @@ public class Main {
                 {65, 56, 55, 52, 55, 62, 57}
         };
         System.out.println("Minimum Value is: "+avgForMultArr(givenArray));
+
+        System.out.println("First part of Lab03 ..... ");
+        weather(givenArray);
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+        tally(votes);
     }
+
+    // lab02 methods
     public static ArrayList<Integer> roll(int n){
         int []dice={1, 2, 3, 4, 5, 6};
         ArrayList<Integer> rollingDice=new ArrayList<Integer>();
@@ -62,4 +78,69 @@ public class Main {
         double minimum= Collections.min(avgs);
         return minimum;
     }
+
+    // lab03 p1 methods
+    public static ArrayList<String> weather(int[][] arr){
+        HashSet<Integer> temps = new HashSet<Integer>();
+        ArrayList<Integer> minArr = new ArrayList<Integer>();
+        ArrayList<Integer> maxArr = new ArrayList<Integer>();
+
+        for (int i = 0; i < arr.length; i++) {
+            ArrayList<Integer> eachArr = new ArrayList<Integer>();
+            for (int i1 : arr[i]) {
+                eachArr.add(i1);
+                temps.add(i1);
+            }
+            int minEach= Collections.min(eachArr);
+            minArr.add(minEach);
+        }
+        for (int i = 0; i < arr.length; i++) {
+            ArrayList<Integer> eachArr = new ArrayList<Integer>();
+            for (int i1 : arr[i]) {
+                eachArr.add(i1);
+            }
+            int maxEach= Collections.max(eachArr);
+            maxArr.add(maxEach);
+        }
+
+        int minVal = Collections.min(minArr);
+        int maxVal = Collections.max(maxArr);
+       // System.out.println("High: "+ maxVal);
+       // System.out.println("Low: "+ minVal);
+
+        ArrayList<String> neverSaw = new ArrayList<String>();
+        for (int i = minVal; i <= maxVal ; i++) {
+            if (!temps.contains(i)){
+                String s = "Never saw temperature: "+ i;
+               // System.out.println(s);
+                neverSaw.add(s);
+            }
+        }
+        ArrayList<String> result = new ArrayList<String>();
+        result.add("High: "+ maxVal);
+        result.add("Low: "+ minVal);
+        result.addAll(neverSaw);
+        System.out.println(result);
+        return result;
+    }
+    public static String tally(List<String> list){
+        HashSet<String> elements = new HashSet<String>();
+        HashMap<String, Integer> votings = new HashMap<String, Integer>();
+        elements.addAll(list);
+
+        for (String i : elements) {
+            int xInteger = Collections.frequency(list, i);
+            votings.put(i, xInteger);
+        }
+       int maxVote = Collections.max(votings.values());
+        String winner = " ";
+        for (String key : votings.keySet()) {
+            if(votings.get(key) == maxVote){
+                winner = key +" received the most votes!";
+            }
+        }
+        System.out.println(winner);
+        return  winner;
+    }
+
 }
