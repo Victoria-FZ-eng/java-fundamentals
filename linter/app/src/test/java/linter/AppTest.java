@@ -4,6 +4,9 @@
 package linter;
 
 import org.junit.Test;
+
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class AppTest {
@@ -11,5 +14,25 @@ public class AppTest {
         App classUnderTest = new App();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
     }
-    @Test public void
+    @Test  public void testJavaScriptLinter(){
+        String noErrors = "noErr.js";
+        String oneErr = "oneErr.js";
+        String fewErr = "fewErr.js";
+        String manyErr = "gates.js";
+        String emptyFile = "empty.js";
+
+        String[] noErr = { };
+        String[] oneErrx = {"Line 5: Missing semicolon."};
+        String[] fewErrx  = {"Line 3: Missing semicolon.", "Line 11: Missing semicolon.", "Line 15: Missing semicolon."};
+        String[] manyErrx = {"Line 60: Missing semicolon.", "Line 71: Missing semicolon.", "Line 101: Missing semicolon.", "Line 79: Missing semicolon.", "Line 82: Missing semicolon.", "Line 74: Missing semicolon.", "Line 32: Missing semicolon.", "Line 91: Missing semicolon.", "Line 96: Missing semicolon.", "Line 85: Missing semicolon.", "Line 41: Missing semicolon.", "Line 61: Missing semicolon.", "Line 50: Missing semicolon.", "Line 94: Missing semicolon.", "Line 99: Missing semicolon.", "Line 83: Missing semicolon.", "Line 77: Missing semicolon.", "Line 72: Missing semicolon.", "Line 88: Missing semicolon.", "Line 64: Missing semicolon.", "Line 36: Missing semicolon.", "Line 97: Missing semicolon.", "Line 89: Missing semicolon.", "Line 5: Missing semicolon.", "Line 70: Missing semicolon.", "Line 100: Missing semicolon.", "Line 62: Missing semicolon.", "Line 73: Missing semicolon.", "Line 51: Missing semicolon.", "Line 59: Missing semicolon.", "Line 90: Missing semicolon.", "Line 95: Missing semicolon.", "Line 98: Missing semicolon.", "Line 76: Missing semicolon.", "Line 84: Missing semicolon.", "Line 78: Missing semicolon.", "Line 40: Missing semicolon.", "Line 3: Missing semicolon."};
+        String[] emtyFilex = { };
+
+        //assertEquals(Arrays.toString(noErr),String.valueOf(App.javaScriptLinter(noErrors)));
+       // assertEquals(Arrays.toString(oneErrx),App.javaScriptLinter(oneErr));
+       // assertEquals(Arrays.toString(fewErrx),String.valueOf(App.javaScriptLinter(fewErr)));
+        assertEquals(Arrays.toString(manyErrx),(App.javaScriptLinter("./app/src/test/resources/gates.js")));
+       // assertEquals(Arrays.toString(emtyFilex),String.valueOf(App.javaScriptLinter(emptyFile)));
+
+    }
+
 }

@@ -20,14 +20,14 @@ public class App {
     public static void main(String[] args)
     {
         System.out.println(new App().getGreeting());
-        javaScriptLinter();
+        System.out.println(javaScriptLinter("gates.js"));
     }
 
-    public static void javaScriptLinter(){
+    public static HashSet<String> javaScriptLinter(String stP){
 
 
         //lab03 part 2
-        Path path = Paths.get("gates.js");
+        Path path = Paths.get(stP);
         ArrayList<String> linesArr = new ArrayList<String>();
         ArrayList<String> linesAll = new ArrayList<String>();
         try{
@@ -86,7 +86,8 @@ public class App {
                 }
             }
         }
-        System.out.println(errorsArr);
+       // System.out.println(errorsArr);
+        return errorsArr;
     }
 
 }
