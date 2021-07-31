@@ -4,6 +4,11 @@
 package linter;
 
 import org.junit.Test;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class AppTest {
@@ -11,5 +16,44 @@ public class AppTest {
         App classUnderTest = new App();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
     }
-    @Test public void
+    @Test  public void testJavaScriptLinter(){
+
+        Path manyPath = Paths.get("src","test","resources","gates.js");
+        String absolutePathMany = manyPath.toFile().getAbsolutePath();
+        //System.out.println(absolutePathMany);
+
+        Path noErrPath = Paths.get("src","test","resources","noErr.js");
+        String absolutePathnoErr = noErrPath.toFile().getAbsolutePath();
+        //System.out.println(absolutePathnoErr);
+
+        Path oneErrPath = Paths.get("src","test","resources","oneErr.js");
+        String absolutePathoneErr = oneErrPath.toFile().getAbsolutePath();
+        // System.out.println(absolutePathoneErr);
+
+        Path fewErrPath = Paths.get("src","test","resources","fewErr.js");
+        String absolutePathfewErr = fewErrPath.toFile().getAbsolutePath();
+       // System.out.println(absolutePathfewErr);
+
+        Path emptyPath = Paths.get("src","test","resources","empty.js");
+        String absolutePathemptyErr = emptyPath.toFile().getAbsolutePath();
+        System.out.println(absolutePathemptyErr);
+
+
+
+        String emptyFile = "empty.js";
+
+        String[] noErr = { };
+        String[] oneErrx = {"Line 5: Missing semicolon."};
+        String[] fewErrx  = {"Line 22: Missing semicolon.","Line 5: Missing semicolon.", "Line 10: Missing semicolon.", "Line 18: Missing semicolon."};
+        String[] manyErrx = {"Line 101: Missing semicolon.", "Line 71: Missing semicolon.", "Line 79: Missing semicolon.", "Line 82: Missing semicolon.", "Line 74: Missing semicolon.", "Line 32: Missing semicolon.", "Line 91: Missing semicolon.", "Line 96: Missing semicolon.", "Line 85: Missing semicolon.", "Line 15: Missing semicolon.", "Line 26: Missing semicolon.", "Line 80: Missing semicolon.", "Line 11: Missing semicolon.", "Line 41: Missing semicolon.", "Line 50: Missing semicolon.", "Line 13: Missing semicolon.", "Line 94: Missing semicolon.", "Line 99: Missing semicolon.", "Line 83: Missing semicolon.", "Line 77: Missing semicolon.", "Line 88: Missing semicolon.", "Line 72: Missing semicolon.", "Line 64: Missing semicolon.", "Line 86: Missing semicolon.", "Line 36: Missing semicolon.", "Line 92: Missing semicolon.", "Line 97: Missing semicolon.", "Line 89: Missing semicolon.", "Line 100: Missing semicolon.", "Line 5: Missing semicolon.", "Line 70: Missing semicolon.", "Line 73: Missing semicolon.", "Line 51: Missing semicolon.", "Line 90: Missing semicolon.", "Line 98: Missing semicolon.", "Line 95: Missing semicolon.", "Line 76: Missing semicolon.", "Line 84: Missing semicolon.", "Line 78: Missing semicolon.", "Line 28: Missing semicolon.", "Line 40: Missing semicolon.", "Line 3: Missing semicolon."};
+        String[] emtyFilex = { };
+
+        assertEquals(Arrays.toString(noErr),String.valueOf(App.javaScriptLinter(absolutePathnoErr)));
+        assertEquals(Arrays.toString(oneErrx),String.valueOf(App.javaScriptLinter(absolutePathoneErr)));
+        assertEquals(Arrays.toString(fewErrx),String.valueOf(App.javaScriptLinter(absolutePathfewErr)));
+        assertEquals(Arrays.toString(manyErrx),String.valueOf(App.javaScriptLinter(absolutePathMany)));
+        assertEquals(Arrays.toString(emtyFilex),String.valueOf(App.javaScriptLinter(absolutePathemptyErr)));
+
+    }
+
 }

@@ -9,8 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.*;
 
 public class App {
     public String getGreeting() {
@@ -20,73 +19,69 @@ public class App {
     public static void main(String[] args)
     {
         System.out.println(new App().getGreeting());
-        javaScriptLinter();
+        System.out.println(javaScriptLinter("resources/gates.js"));
+        //javaScriptLinter("resources/oneErr.js");
     }
 
-    public static void javaScriptLinter(){
+    public static HashSet<String> javaScriptLinter(String stP){
 
 
         //lab03 part 2
-        Path path = Paths.get("gates.js");
-        ArrayList<String> linesArr = new ArrayList<String>();
+        Path path = Paths.get(stP); //Hana's way
+
+
+        ArrayList<String> linesErr = new ArrayList<String>();
         ArrayList<String> linesAll = new ArrayList<String>();
+        HashMap<String, String> linesNumLine = new HashMap<String, String>();
+
+        HashSet<String> errorsArr = new HashSet<String>();
+
         try{
             BufferedReader reader= Files.newBufferedReader(path);
             String line = reader.readLine();
             linesAll.add(line);
-            if (line != null){
-                if(!(line.isEmpty()) ){
-                    if(!(String.valueOf(line.charAt(line.length() - 1)).matches("\\{"))){
-                        if(!(String.valueOf(line.charAt(line.length() - 1)).matches("\\}"))){
-                            if(!(String.valueOf(line.charAt(line.length() - 1)).matches(";"))){
-                                if(!(line.contains("if"))){
-                                    if(!(line.contains("else"))){
-                                        linesArr.add(line);
-                                    }
-
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            while(line != null){
+            while(line != null) {
                 line = reader.readLine();
                 linesAll.add(line);
-                if (line != null){
-                    if(!(line.isEmpty()) ){
-                        if(!(String.valueOf(line.charAt(line.length() - 1)).matches("\\{"))){
-                            if(!(String.valueOf(line.charAt(line.length() - 1)).matches("\\}"))){
-                                if(!(String.valueOf(line.charAt(line.length() - 1)).matches(";"))){
-                                    if(!(line.contains("if"))){
-                                        if(!(line.contains("else"))){
-                                            linesArr.add(line);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
             }
+            int l =1;
+            for (String s : linesAll) {
+                String lineNum = "Line "+l ;
+                linesNumLine.put(lineNum,s);
+                l++;
+            }
+
+            for (Map.Entry<String,String> entry : linesNumLine.entrySet()) {
+               String  xs = String.valueOf(entry.getValue());
+                   if (!(xs.length()==0)) {
+                       if (!(String.valueOf(xs.charAt(xs.length() - 1)).matches("\\{"))) {
+                           if (!(String.valueOf(xs.charAt(xs.length() - 1)).matches("\\}"))) {
+                               if (!(String.valueOf(xs.charAt(xs.length() - 1)).matches(";"))) {
+                                   if (!(xs.contains("if"))) {
+                                       if (!(xs.contains("else"))) {
+                                           if (!(String.valueOf(xs.charAt(0)).matches("/"))) {
+                                               String x = String.valueOf(entry.getKey()) + ": Missing semicolon.";
+                                               if(xs != "null"){
+                                                   errorsArr.add(x);
+                                                   System.out.println(entry.getKey()+ xs);
+                                               }
+
+                                           }
+                                       }
+                                   }
+                               }
+                           }
+                       }
+                   }
+               }
+
+
         }catch (IOException e){
             e.printStackTrace();
         } //finally {
         //reader.close();
         //}
-
-        //System.out.println(linesArr);
-        // System.out.println(linesAll);
-        HashSet<String> errorsArr = new HashSet<String>();
-        for (String i : linesAll){
-            int l = linesAll.indexOf(i)+1;
-            for (String j : linesArr){
-                if (i == j){
-                    errorsArr.add("Line "+l+": Missing semicolon.");
-                }
-            }
-        }
-        System.out.println(errorsArr);
+        return errorsArr;
     }
 
 }

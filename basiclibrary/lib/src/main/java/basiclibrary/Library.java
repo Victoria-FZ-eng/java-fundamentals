@@ -6,11 +6,12 @@ import java.util.*;
 
 
 public class Library {
-    public boolean someLibraryMethod() {
+    public static boolean someLibraryMethod() {
         return true;
     }
 
     public static void main(String[] args) {
+        someLibraryMethod();
         System.out.println("Hello from lab02");
         System.out.println("Rolling the dice: " + roll(4));
         // roll(4);
