@@ -25,10 +25,8 @@ public class App {
 
     public static HashSet<String> javaScriptLinter(String stP){
 
-
         //lab03 part 2
         Path path = Paths.get(stP); //Hana's way
-
 
         ArrayList<String> linesErr = new ArrayList<String>();
         ArrayList<String> linesAll = new ArrayList<String>();
