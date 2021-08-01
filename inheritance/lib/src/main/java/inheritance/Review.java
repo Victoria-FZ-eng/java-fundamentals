@@ -18,7 +18,7 @@ public class Review {
     @Override
     public String toString(){
 
-        return "Review: " + body + " - "+
+        return " : " + body + " - "+
                 star +" stars - " +
                 "author : " +author ;
     }

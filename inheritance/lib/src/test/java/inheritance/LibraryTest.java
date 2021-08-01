@@ -11,5 +11,11 @@ class LibraryTest {
         Library classUnderTest = new Library();
         assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
     }
+    @Test void reviewTesting(){
+       // Restaurant mwal = new Restaurant("Mawwal", 5, 2);
+       // mwal.addReview("Good Service, and Delicious Food ", "Vickey", 4 );
+
+        assertEquals("Review For Mawwal Resturant  : Good Service, and Delicious Food  - 5 stars - author : Vickey",Library.viewRev("Mawwal",5,2,"Vickey","Good Service, and Delicious Food "));
+    }
 
 }

@@ -19,10 +19,22 @@ public class Library {
         housh.testing();
         System.out.println(housh.toString());
 
-        Review macr = new Review("Fast Delivering", "Victoria", 4 );
-        macr.testing();
-        System.out.println(macr.toString());
+//        Review macr = new Review("Fast Delivering", "Victoria", 4 );
+//        macr.testing();
+//        System.out.println(macr.toString());
 
+        mac.addReview("Fast Delivering", "Victoria", 4 );
+        mac.getRev();
+
+        viewRev("asd",5,8,"sfsdf", "sdfsdfsdfsdf");
+
+    }
+
+    public static String viewRev(String name, int star, int price, String auth, String desc){
+        Restaurant res = new Restaurant(name, star, price);
+        res.addReview(desc, auth, star );
+        //res.getRev();
+        return  res.getRev() ;
 
     }
 
