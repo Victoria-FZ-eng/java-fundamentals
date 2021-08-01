@@ -7,4 +7,23 @@ public class Library {
     public boolean someLibraryMethod() {
         return true;
     }
+
+    public static void main(String [] args){
+        System.out.println("Hello from Lab06");
+
+        Restaurant mac = new Restaurant("Mac", 4, 1);
+        mac.testing();
+        System.out.println(mac.toString());
+
+        Restaurant housh = new Restaurant("Al-Housh", 4 , 2);
+        housh.testing();
+        System.out.println(housh.toString());
+
+        Review macr = new Review("Fast Delivering", "Victoria", 4 );
+        macr.testing();
+        System.out.println(macr.toString());
+
+
+    }
+
 }
