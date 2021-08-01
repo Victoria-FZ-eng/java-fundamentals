@@ -15,11 +15,11 @@ public class Library {
 
         Restaurant mac = new Restaurant("Mac", 4, 1);
         mac.testing();
-        System.out.println(mac.toString());
+       // System.out.println(mac.toString());
 
         Restaurant housh = new Restaurant("Al-Housh", 4 , 2);
         housh.testing();
-        System.out.println(housh.toString());
+       // System.out.println(housh.toString());
 
 //        Review macr = new Review("Fast Delivering", "Victoria", 4 );
 //        macr.testing();
@@ -32,6 +32,7 @@ public class Library {
 
         viewRev("asd",5,8,"sfsdf", "sdfsdfsdfsdf");
         checkStar("asd",5,8,"sfsdf", "sdfsdfsdfsdf", 0);
+        addRest("Popyes",4,1);
 
     }
 
@@ -49,7 +50,12 @@ public class Library {
         res.addReview(desc, auth, newStar );
         //res.getRev();
         return  res.updatedStarRev();
+    }
 
+    public static String addRest(String name, int star, int price){
+        Restaurant res = new Restaurant(name, star, price);
+        System.out.println(res.get());
+        return res.get();
     }
 
 }

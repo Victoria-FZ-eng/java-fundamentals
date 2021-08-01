@@ -48,15 +48,15 @@ public class Restaurant {
 
      // star = starnew;
       reviewString = "Review For " +name + " Resturant "+ review.toString();
-      System.out.println("Review For " +name + " Resturant "+ review.toString());
+     // System.out.println("Review For " +name + " Resturant "+ review.toString());
       review.testing();
-      System.out.println("star new: "+star);
+    //  System.out.println("star new: "+star);
       revArr.add(reviewString);
       return reviewString;
    }
 
    public ArrayList<String> getRev(){
-      System.out.println("getting Rev");
+      //System.out.println("getting Rev");
       return revArr;
    }
 
@@ -65,8 +65,13 @@ public class Restaurant {
    }
 
    public String  updatedStarRev(){
-      System.out.println("Old rating: "+oldStar + " - New rating: "+star);
+    //  System.out.println("Old rating: "+oldStar + " - New rating: "+star);
       return "Old rating: "+oldStar + " - New rating: "+star ;
+   }
+
+   public String get(){
+      //System.out.println("Name: "+name+" - Stars: "+star+" - Price category: "+priceCat);
+      return "Name: "+name+" - Stars: "+star+" - Price category: "+priceCat ;
    }
 
 

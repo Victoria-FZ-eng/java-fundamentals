@@ -18,8 +18,13 @@ class LibraryTest {
         assertEquals("[Review For Mawwal Resturant  : Good Service, and Delicious Food  - 5 stars - author : Vickey]",String.valueOf(Library.viewRev("Mawwal",5,2,"Vickey","Good Service, and Delicious Food ")));
     }
     @Test void starUpdate(){
-        assertEquals("Old rating: 5 - New rating: 4",String.valueOf(Library.checkStar("Mawwal",5,2,"Vickey","Good Service, and Delicious Food ",4)));
+        assertEquals("Old rating: 5 - New rating: 4",Library.checkStar("Mawwal",5,2,"Vickey","Good Service, and Delicious Food ",4));
 
     }
+    @Test void testResturant(){
+
+        assertEquals("Name: US EAGLE - Stars: 5 - Price category: 3", Library.addRest("US EAGLE",5,3));
+    }
+
 
 }
