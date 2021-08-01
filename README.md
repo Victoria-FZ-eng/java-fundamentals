@@ -17,3 +17,11 @@
 3. Create method to read a js file and find the errors of missing semi-colon.
 4. Run tests for all methods .
 
+## lab04 /skipped
+
+## lab06 /01-8
+1. Creating classes for resturants and reviews
+2. Creating constructors for each
+3. Use Association to associate the review to the resturant 
+4. Tests all methods.
+
