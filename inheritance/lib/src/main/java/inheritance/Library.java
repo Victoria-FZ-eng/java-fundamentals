@@ -3,6 +3,8 @@
  */
 package inheritance;
 
+import java.util.ArrayList;
+
 public class Library {
     public boolean someLibraryMethod() {
         return true;
@@ -23,18 +25,30 @@ public class Library {
 //        macr.testing();
 //        System.out.println(macr.toString());
 
-        mac.addReview("Fast Delivering", "Victoria", 4 );
+        mac.addReview("Fast Delivering", "Victoria", 1 );
+//        mac.addReview("wwwwwwwwwwwwwwwwwwwwwww", "Viwqeqweia", 2 );
+//        mac.addReview("qqqqqqqqqqqq", "Viqwria",  4);
         mac.getRev();
 
         viewRev("asd",5,8,"sfsdf", "sdfsdfsdfsdf");
+        checkStar("asd",5,8,"sfsdf", "sdfsdfsdfsdf", 0);
 
     }
 
-    public static String viewRev(String name, int star, int price, String auth, String desc){
+    public static ArrayList<String> viewRev(String name, int star, int price, String auth, String desc){
         Restaurant res = new Restaurant(name, star, price);
         res.addReview(desc, auth, star );
         //res.getRev();
         return  res.getRev() ;
+
+    }
+
+    public static String checkStar(String name, int star, int price, String auth, String desc , int newStar){
+        Restaurant res = new Restaurant(name, star, price);
+        res.addReview(desc, auth, star );
+        res.addReview(desc, auth, newStar );
+        //res.getRev();
+        return  res.updatedStarRev();
 
     }
 
