@@ -13,26 +13,26 @@ public class Library {
     public static void main(String [] args){
         System.out.println("Hello from Lab06");
 
-        Restaurant mac = new Restaurant("Mac", 4, 1);
-        mac.testing();
+      //  Restaurant mac = new Restaurant("Mac", 4, 1);
+      //  mac.testing();
        // System.out.println(mac.toString());
 
-        Restaurant housh = new Restaurant("Al-Housh", 4 , 2);
-        housh.testing();
+       // Restaurant housh = new Restaurant("Al-Housh", 4 , 2);
+       // housh.testing();
        // System.out.println(housh.toString());
 
 //        Review macr = new Review("Fast Delivering", "Victoria", 4 );
 //        macr.testing();
 //        System.out.println(macr.toString());
 
-        mac.addReview("Fast Delivering", "Victoria", 1 );
+       // mac.addReview("Fast Delivering", "Victoria", 1 );
 //        mac.addReview("wwwwwwwwwwwwwwwwwwwwwww", "Viwqeqweia", 2 );
 //        mac.addReview("qqqqqqqqqqqq", "Viqwria",  4);
-        mac.getRev();
+       // mac.getRev();
 
-        viewRev("asd",5,8,"sfsdf", "sdfsdfsdfsdf");
-        checkStar("asd",5,8,"sfsdf", "sdfsdfsdfsdf", 0);
-        addRest("Popyes",4,1);
+     //   viewRev("asd",5,8,"sfsdf", "sdfsdfsdfsdf");
+        checkStar("asd",2,8,"sfsdf", "sdfsdfsdfsdf", 4);
+      //  addRest("Popyes",4,1);
 
     }
 
@@ -46,10 +46,11 @@ public class Library {
 
     public static String checkStar(String name, int star, int price, String auth, String desc , int newStar){
         Restaurant res = new Restaurant(name, star, price);
-        res.addReview(desc, auth, star );
+       // res.addReview(desc, auth, star );
         res.addReview(desc, auth, newStar );
-        //res.getRev();
-        return  res.updatedStarRev();
+        System.out.println( res.getRev());
+        System.out.println(res.toString());
+        return  res.toString();
     }
 
     public static String addRest(String name, int star, int price){
