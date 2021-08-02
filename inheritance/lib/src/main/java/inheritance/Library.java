@@ -13,6 +13,9 @@ public class Library {
     public static void main(String [] args){
         System.out.println("Hello from Lab06");
 
+ //--------------------------------------------------------------------------------------------
+ //           lab06
+ //--------------------------------------------------------------------------------------------
       //  Restaurant mac = new Restaurant("Mac", 4, 1);
       //  mac.testing();
        // System.out.println(mac.toString());
@@ -31,11 +34,19 @@ public class Library {
        // mac.getRev();
 
      //   viewRev("asd",5,8,"sfsdf", "sdfsdfsdfsdf");
-        checkStar("asd",2,8,"sfsdf", "sdfsdfsdfsdf", 4);
+       // checkStar("asd",2,8,"sfsdf", "sdfsdfsdfsdf", 4);
       //  addRest("Popyes",4,1);
 
-    }
 
+        //--------------------------------------------------------------------------------------------
+        //           lab07
+        //--------------------------------------------------------------------------------------------
+
+        shopSt("Natural Looks", "Perfumes ,lotions, butter, masks, bath bubbles,.....", 5);
+    }
+    //--------------------------------------------------------------------------------------------
+    //           lab06
+    //--------------------------------------------------------------------------------------------
     public static ArrayList<String> viewRev(String name, int star, int price, String auth, String desc){
         Restaurant res = new Restaurant(name, star, price);
         res.addReview(desc, auth, star );
@@ -59,4 +70,13 @@ public class Library {
         return res.get();
     }
 
+    //--------------------------------------------------------------------------------------------
+    //           lab07
+    //--------------------------------------------------------------------------------------------
+
+    public static String shopSt(String name, String desc, int dol){
+        Shop shop = new Shop(name,desc,dol);
+        System.out.println(shop.toString());
+       return shop.toString();
+    }
 }

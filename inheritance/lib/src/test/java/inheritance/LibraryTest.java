@@ -11,6 +11,8 @@ class LibraryTest {
         Library classUnderTest = new Library();
         assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
     }
+
+    // lab06 tests
     @Test void reviewTesting(){
        // Restaurant mwal = new Restaurant("Mawwal", 5, 2);
        // mwal.addReview("Good Service, and Delicious Food ", "Vickey", 4 );
@@ -25,6 +27,10 @@ class LibraryTest {
 
         assertEquals("Name: US EAGLE - Stars: 5 - Price category: 3", Library.addRest("US EAGLE",5,3));
     }
+// lab07 tests
+@Test void testShop(){
 
+    assertEquals("Shop Name: Tallet Al-Borj - Shop Description: Shoes and Bags - All ages - Price Category : 3.$", Library.shopSt("Tallet Al-Borj","Shoes and Bags - All ages", 3));
+}
 
 }
