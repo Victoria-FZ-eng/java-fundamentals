@@ -25,3 +25,12 @@
 3. Use Association to associate the review to the resturant 
 4. Tests all methods.
 
+## lab07 /02-8
+1. Creating parent "Store" and sub classes "Resturant, Shop, Theater".
+2. Use parent methods in sub-classes .
+3. Sub-classes Use Parent class field's .
+4. Creating same method but differentiate in the signature.
+5. Use polymorphism.
+6. Test all methods.
+
+

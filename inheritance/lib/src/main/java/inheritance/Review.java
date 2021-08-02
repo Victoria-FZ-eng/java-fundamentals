@@ -4,6 +4,8 @@ public class Review {
     String body;
     String author;
     int star;
+    int mvidx;
+
 
     public Review(String body, String author, int star){
         this.author = author;
@@ -18,8 +20,14 @@ public class Review {
     @Override
     public String toString(){
 
-        return " : " + body + " - "+
-                star +" stars - " +
-                "author : " +author ;
+        return "Review : " + body + " - "+ star +" stars - " + "author : " +author ;
     }
+
+    public Review(String body, String author, int star, int mvidx){
+        this.author = author;
+        this.body = body;
+        this.star = star;
+        this.mvidx=mvidx;
+    }
+
 }
