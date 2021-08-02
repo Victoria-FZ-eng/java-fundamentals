@@ -2,7 +2,7 @@ package inheritance;
 
 import java.util.ArrayList;
 
-public class Restaurant {
+public class Restaurant extends Store {
 
    private String name;
    private int star;
@@ -59,7 +59,7 @@ public class Restaurant {
       System.out.println(starss);
       star = sum/(starss.size());
 
-      reviewString = "Review For " +name + " Resturant "+ review.toString();
+      reviewString = name + " Resturant "+ review.toString();
      // System.out.println("Review For " +name + " Resturant "+ review.toString());
       review.testing();
     //  System.out.println("star new: "+star);

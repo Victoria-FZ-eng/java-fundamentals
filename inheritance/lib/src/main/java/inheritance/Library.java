@@ -11,7 +11,7 @@ public class Library {
     }
 
     public static void main(String [] args){
-        System.out.println("Hello from Lab06");
+        System.out.println("Hello from Lab06 & Lab07");
 
  //--------------------------------------------------------------------------------------------
  //           lab06
@@ -42,7 +42,10 @@ public class Library {
         //           lab07
         //--------------------------------------------------------------------------------------------
 
+        Store shop = new Shop("Amedd","Coffee",1);
         shopSt("Natural Looks", "Perfumes ,lotions, butter, masks, bath bubbles,.....", 5);
+        shopReview(shop,"very Good", "Vickey", 4);
+        viewReview(shop);
     }
     //--------------------------------------------------------------------------------------------
     //           lab06
@@ -78,5 +81,14 @@ public class Library {
         Shop shop = new Shop(name,desc,dol);
         System.out.println(shop.toString());
        return shop.toString();
+    }
+    public static String shopReview(Store str,String rev, String auth, int star){
+
+        System.out.println(str.addReview(rev,auth,star));
+       return str.addReview(rev,auth,star);
+    }
+    public static ArrayList<String> viewReview(Store str){
+
+       return str.viewReviews();
     }
 }

@@ -1,10 +1,14 @@
 package inheritance;
 
-public class Shop {
+import java.util.ArrayList;
+
+public class Shop extends Store {
 
     private String name;
     private String description;
     private int priceCat;
+
+
 
     public Shop(String name ,String description , int priceCat){
         this.name=name;
@@ -19,4 +23,5 @@ public class Shop {
                 description+
                 " - Price Category : " +priceCat + ".$";
     }
+
 }
