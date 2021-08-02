@@ -32,11 +32,21 @@ class LibraryTest {
 
     assertEquals("Shop Name: Tallet Al-Borj - Shop Description: Shoes and Bags - All ages - Price Category : 3.$", Library.shopSt("Tallet Al-Borj","Shoes and Bags - All ages", 3));
 }
-@Test void testShopRev(){
+@Test void testStoresRev(){
 
     Shop shop = new Shop("Greenii","Plants",2);
     shop.addReview("very Good", "Vickey", 4);
     assertEquals("[Review : very Good - 4 stars - author : Vickey]", String.valueOf(Library.viewReview(shop)));
+
+    Theater thea = new Theater("HollyWood Cinemas");
+    thea.addReview("Nice", "Vickey", 5);
+    assertEquals("[Review : Nice - 5 stars - author : Vickey]", String.valueOf(Library.viewReview(thea)));
+}
+@Test void Theater(){
+        Theater thea = new Theater("Blah");
+        thea.addMovie("1");
+        thea.removeMovie(3);
+        assertEquals("Theater Name: Blah - Movies Available: [Pirates Of The Caribbean, She's The Man, Maleficent, 1, 2, 3]", Library.addMvs(thea,"2","3"));
 }
 
 }

@@ -46,6 +46,13 @@ public class Library {
         shopSt("Natural Looks", "Perfumes ,lotions, butter, masks, bath bubbles,.....", 5);
         shopReview(shop,"very Good", "Vickey", 4);
         viewReview(shop);
+
+       // Store theater = new Theater("Taj");
+        theaterSt("Disney");
+        Theater theater = new Theater("new");
+        addMvs(theater, "Movie 1", "Movie 2");
+        removeMvs(theater,2);
+
     }
     //--------------------------------------------------------------------------------------------
     //           lab06
@@ -90,5 +97,21 @@ public class Library {
     public static ArrayList<String> viewReview(Store str){
 
        return str.viewReviews();
+    }
+    public static String theaterSt(String name){
+        Store theater = new Theater(name);
+        System.out.println(theater.toString());
+        return theater.toString();
+    }
+    public static String addMvs(Theater thea, String mv1, String mv2){
+        thea.addMovie(mv1);
+        thea.addMovie(mv2);
+        System.out.println(thea.toString());
+        return thea.toString();
+    }
+    public static String removeMvs(Theater thea, int mvidx){
+        thea.removeMovie(mvidx);
+        System.out.println(thea.toString());
+        return thea.toString();
     }
 }
