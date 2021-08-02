@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Theater extends Store {
 
     String name;
-    ArrayList<String> movies= new ArrayList<String>();
+
 
     public Theater(String name){
         this.name=name;
@@ -33,5 +33,7 @@ public class Theater extends Store {
         return "Theater Name: " + name + " - Movies Available: "+
                 movies;
     }
+
+
 
 }

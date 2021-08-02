@@ -52,6 +52,8 @@ public class Library {
         Theater theater = new Theater("new");
         addMvs(theater, "Movie 1", "Movie 2");
         removeMvs(theater,2);
+        shopReview(theater,"very Good", "Vickey", 4,3);
+        shopReview(theater,"very Good", "Vickey", 4);
 
     }
     //--------------------------------------------------------------------------------------------
@@ -113,5 +115,10 @@ public class Library {
         thea.removeMovie(mvidx);
         System.out.println(thea.toString());
         return thea.toString();
+    }
+    public static String shopReview(Store str,String rev, String auth, int star, int idx){
+
+        System.out.println(str.addReview(rev,auth,star,idx));
+        return str.addReview(rev,auth,star,idx);
     }
 }
