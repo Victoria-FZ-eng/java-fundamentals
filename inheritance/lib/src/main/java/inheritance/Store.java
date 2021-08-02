@@ -46,6 +46,15 @@ public class Store {
             starx=star;
         }
 
+        if(idx < 0 ){
+            // starsArr.add(0);
+            idx=0;
+        }
+        else if(idx >= movies.size()){
+            //  starsArr.add(5);
+            idx=movies.size()-1;
+        }
+
         Review review = new Review(rev, auth, starx, idx );
         revs.add(review.toString()+ " - Movie Watched: "+ movies.get(idx));
         return review.toString()+ " - Movie Watched: "+ movies.get(idx);

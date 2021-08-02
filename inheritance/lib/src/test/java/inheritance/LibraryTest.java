@@ -50,7 +50,7 @@ class LibraryTest {
         thea.removeMovie(3);
         assertEquals("Theater Name: Blah - Movies Available: [Pirates Of The Caribbean, She's The Man, Maleficent, 1, 2, 3]", Library.addMvs(thea,"2","3"));
 }
-// testing adding the watche movie to reviews
+// testing adding the watched movie to reviews
 @Test void testStoresRevNew(){
 
     Theater thea = new Theater("HollyWood Cinemas");
